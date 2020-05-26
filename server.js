@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // dependency injection
+app.get('/', (req, res) => { res.send('It is working!') })
 app.post('/signin', (req, res) => { handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { handleProfileGet(req, res, db) })
